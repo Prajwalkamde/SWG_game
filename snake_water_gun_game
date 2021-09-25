@@ -1,0 +1,81 @@
+import random
+list = ['s','w','g']
+
+attempts = 10
+no_of_attempts = 0
+pc_points = 0
+your_points = 0
+
+print ("Hello! This is snake , water , gun game\n")
+print (" s for snake\n w for water\n g for gun\n")
+
+while no_of_attempts<attempts:
+	inp = input("Snake,Water,Gun:").lower()
+	ran = random.choice(list)
+	
+	if inp == ran:
+		print ("Tie")
+	
+#user enter s
+
+	elif inp =="s" and ran == "g":
+		pc_points = pc_points+1
+		print (f"You guess {inp} and Computer guess {ran}\n")
+		print ("Computer Win 1 point\n")
+		print (f"Your point is{your_points} and Computer point is{pc_points}\n")
+
+	elif inp == "s" and ran == "w":
+		your_points = your_points+1
+		print (f"You guess {inp} and Computer guess {ran} \n")
+		print ("You got 1 point")
+		print (f"Your points is{your_points} and Computer points is{pc_points} \n")
+	
+#user enter G
+
+	elif inp =="g" and ran == "w":
+		pc_points = pc_points+1
+		print (f"You guess {inp} and Computer guess {ran} \n")
+		print ("Computer win 1 point")
+		print (f"Your points is {your_points} and Computer points is {pc_points} \n")
+	
+	elif inp =="g" and ran == "s":
+		your_points = your_points+1
+		print (f"You guess {inp} and Computer guess {ran} \n")
+		print ("You got 1 point")
+		print (f"Your points is {your_points} and Computer points is {pc_points} \n")
+	
+#user enter W
+
+	elif inp =="w" and ran == "s":
+		pc_points = pc_points+1
+		print (f"You guess {inp} and Computer guess {ran} \n")
+		print ("Computer win 1 point")
+		print (f"Your points is {your_points} and Computer points is {pc_points} \n")
+	
+	
+	elif inp =="w" and ran == "g":
+		your_points = your_points+1
+		print (f"You guess {inp} and Computer guess {ran} \n")
+		print ("You got 1 point")
+		print (f"Your points is {your_points} and Computer points is {pc_points} \n")
+	
+	
+	else:
+		print ("Please enter valid input! (s,w or g) \n")
+	
+	no_of_attempts = no_of_attempts+1
+
+	print (f"{attempts - no_of_attempts} chance is left out of {attempts}\n")
+
+print ("Game Over!!!")
+
+if your_points == pc_points:
+	print ("Tie")
+	
+elif your_points>pc_points:
+	print ("Congratulations! You Won")
+	
+else:
+	print ("You lose computer won")
+	
+print (f"Your points is { your_points} and Computer points is { pc_points}")
